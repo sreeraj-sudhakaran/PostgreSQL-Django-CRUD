@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<title>PostgreSQL</title>
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+<h2>PostgreSQL Table</h2>
+
+<table>
+  <tr>
+    <td><a href="/show/">Go Back</a></td>
+  </tr>
+
+</table>
+
+
+
+<form method="POST">
+
+{% csrf_token %}
+
+<br><br>
+<div class="alert alert-danger" role="alert">
+    Are you sure you want to delete all the data?
+</div>
+
+
+<p>
+    <input class="btn btn-danger" type="submit" value="Confirm">
+</p>
+
+</form>
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>PostgreSQL</title>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+</style>
+</head>
+<body>
+
+<h2>PostgreSQL Table</h2>
+
+<table>
+  <tr>
+    <td><a href="/show/">show table</a></td>
+    <td><a href="/add/">add row</a></td>
+    <td><a href="/top5/">top 5</a></td>
+    <td><a href="/bottom5/">bottom 5</a></td>
+    <td><a href="/male/">Male Students</a></td>
+    <td><a href="/female/">Female Students</a></td>
+    <td><a href="/other/">Other Students</a></td>
+    <td><a href="/deleteall/">Delete all</a></td>
+  </tr>
+<table>
+<a href="/dummydata/">Create 10 dummy entries</a>
+
+<br><br>
+
+<table>
+  <tr>
+    <th>Student Name</th>
+    <th>Student Gender</th>
+    <th>Student Email</th>
+    <th>Student Score</th>
+    <th></th>
+    <th></th>
+  </tr>
+  {% for student in students %}
+  <tr>
+    <td>{{student.StudentName}}</td>
+    <td>{{student.StudentGender}}</td>
+    <td>{{student.StudentEmail}}</td>
+    <td>{{student.StudentScore}}</td>
+    <td>
+        <a href="/update/{{student.pk}}">Update</a>
+    </td>
+    <td>
+        <a href="/delete/{{student.pk}}">Delete</a>
+    </td>
+  </tr>
+  {% endfor %}
+
+</table>
+
+</body>
+</html>
+
